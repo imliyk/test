@@ -1,0 +1,39 @@
+lyk目前进度(vue前端 element组件 springboot前后端连接)
+air-manager:
+vue界面前端部分,目前实现了简要侧边栏，界面切换的简要逻辑，登录注册界面，
+与测试数据库交互,table名:user,worker,其中包含id,username,password等信息
+可通过注册界面将输入数据导入数据库，并验证数据库中的数据进行登录（用户与工作人员信息，界面分离）
+            assets:存储所用图像
+            conponents:验证码
+            router:实现界面切换的逻辑
+            utils:axios封装
+            views:主界面部分
+                ChooseLogin:选择身份进行后续操作（住户或工作人员）
+                UserHome:客户登录后主界面（未完成）
+                UserLogin:客户登录界面（须先注册）
+                UserRegister:客户注册界面
+                WorkerHome:工作人员登录后主界面，包含前台，空调管理员，酒店管理员三个子界面（未完成）
+                WorkerLogin:工作人员登录界面（须先注册）
+                WorkerRegister:工作人员注册界面
+            使用npm run serve运行
+
+springboott:springboot部分,实现了前后端的连接,目前可以实现实现数据库内容的添加修改删除查询
+            主要代码存储在src main java中
+                common corsconfig:解决跨域问题
+                controller:实现数据库数据的处理
+                    UserController:管理住户数据库(添加修改删除查询)
+                    WorkerController:管理工作人员数据库(添加修改删除查询)
+                    WebController:实现用户登录注册的逻辑
+                entity:主体
+                    User:存放住户数据库信息(测试，内容需修改)
+                    Worker:存放工作人员数据库信息(测试，内容需修改)
+                exception:异常
+                    GlobalException:通用异常
+                    ServiceException:自定义异常
+                mapper:具体处理数据库数据的指令及函数
+                    UserMapper:处理客户数据库中的数据
+                    WorkerMapper:处理工作人员数据库中的数据
+                service:定义数据处理函数
+                    UserService:定义有关住户数据库数据处理的函数
+                    WorkerService:定义有关工作人员数据库数据处理的函数
+            resources中的application.yml记录了端口号和连接的数据库url
